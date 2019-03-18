@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>Modification de voiture</h1>
+
+  {% include 'home/form.html.twig' %}
+  <button type="submit" class="success button expanded" name="button">Modifier</button>
+  {{ form_end(form) }}
+{% endblock %}

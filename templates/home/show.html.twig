@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>La voiture {{ car.model }}</h1>
+<div>prix: {{ car.price }}</div>
+{% if car.image.name is defined %}
+<img src="{{ asset('images/')~ car.image.name }}" alt="">
+{% else %}
+<p>Pas d'image</p>
+{% endif %}
+
+{% for keyword in car.keywords %}
+<p>{{ keyword.name }}{% if not loop.last %}, {% endif %}</p>
+{% endfor %}
+{% endblock %}

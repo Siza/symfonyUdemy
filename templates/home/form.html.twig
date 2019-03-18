@@ -1,0 +1,13 @@
+{{ form_start(form, {'attr' : {'novalidate' : 'novalidate'}}) }}
+
+{{ form_label(form.model) }}
+{{ form_widget(form.model) }}
+{{ form_errors(form.model) }}
+
+{{ form_label(form.price) }}
+{{ form_widget(form.price) }}
+{{ form_errors(form.price) }}
+
+{{ form_row(form.image) }}
+
+{{ form_row(form.keywords) }}

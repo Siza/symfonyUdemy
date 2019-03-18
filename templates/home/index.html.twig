@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Voitures{% endblock %}
+
+{% block body %}
+  <h1>Les voitures</h1>
+  <div class="grid-container">
+    <div class="grid-x">
+      <ul>
+      {% for car in cars %}
+        <li><a href="{{ path('show', {'id': car.id }) }}">{{ car.model }}</a> <a href="{{ path('edit', {'id': car.id }) }}">Editer</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

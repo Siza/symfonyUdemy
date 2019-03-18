@@ -1,0 +1,10 @@
+App\Entity\Car:
+  car_1:
+    model: C5
+    price: 3500
+  car_2:
+    model: X5
+    price: 4500
+  car_3:
+    model: 508
+    price: 3300

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+      <ul class="vertical medium-horizontal menu">
+        <li><a href="{{ path('home') }}"><i class="fi-list"></i> <span>Accueil</span></a></li>
+        <li><a href="{{ path('add') }}"><i class="fi-list"></i> <span>Ajouter</span></a></li>
+        <li><a href="{{ path('contact') }}"><i class="fi-list"></i> <span>Contact</span></a></li>
+
+      </ul>
+      <div class="grid-container">
+        {% block flash %}
+          {% for message in app.flashes('notice') %}
+              <div class="callout success" data-closable>
+                  {{ message }}
+                  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          {% endfor %}
+        {% endblock %}
+
+        {% block body %}
+
+        {% endblock %}
+      </div>
+        {% block javascripts %}
+        <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+        <script src="{{ asset('js/vendor/what-input.js') }}"></script>
+        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
